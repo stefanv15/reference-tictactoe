@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Fixing docker-compose file problem given from instructors from www.github/hgop/syllabus/glossary/tipsandtricks
 set -e
 
 sleep 10
