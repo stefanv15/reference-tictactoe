@@ -3,6 +3,7 @@ services:
   server:
     environment:
       - 'PORT=3000'
+    # Pointing at my working docker image
     image: 'stefanv15/tictactoe:${GIT_COMMIT}'
     build:
       context: '.'
