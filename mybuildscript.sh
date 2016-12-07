@@ -1,16 +1,9 @@
 #!/bin/bash
 
 echo Cleaning...
-rm -rf ./dist
+rm -rf ./build
 
 echo Building folders
-mkdir dist
-cd dist
-touch githash.txt
-mkdir public
-cd public
-touch githash.txt
-cd ../../
 
 if [ -z "$GIT_COMMIT" ]; then
   export GIT_COMMIT=$(git rev-parse HEAD)
@@ -24,6 +17,10 @@ export GITHUB_URL=$(echo $GIT_URL | rev | cut -c 5- | rev)
 echo Building app
 npm run build
 
+mkdir /build/public
+cat > ./build/.env <<_EOF_
+GIT_COMMIT=$GIT_COMMIT
+_EOF_
 
 rc=$?
 if [[ $rc != 0 ]] ; then
@@ -31,11 +28,11 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
-cat > ./dist/githash.txt <<_EOF_
+cat > ./build/githash.txt <<_EOF_
 $GIT_COMMIT
 _EOF_
 
-cat > ./dist/public/version.html << _EOF_
+cat > ./build/public/version.html << _EOF_
 <!doctype html>
 <head>
    <title>App version information</title>
@@ -49,11 +46,14 @@ cat > ./dist/public/version.html << _EOF_
 _EOF_
 
 cp ./Dockerfile ./build/
-cp ./Dockerfile ./dist/
-cd dist
+cp ./package.json ./build/
+cp ./docker-compose.yaml ./build/
+cp ./migrate.sh ./build/
+
+cd build
 echo Building docker image
 
-docker build -t stefanv15/tictactoe:$GIT_COMMIT .
+sudo docker build -t stefanv15/tictactoe:$GIT_COMMIT .
 
 rc=$?
 if [[ $rc != 0 ]] ; then
@@ -61,7 +61,7 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
-docker push stefanv15/tictactoe:$GIT_COMMIT
+sudo docker push stefanv15/tictactoe:$GIT_COMMIT
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "Docker push failed " $rc
