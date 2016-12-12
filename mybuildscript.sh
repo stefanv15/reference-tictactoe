@@ -66,7 +66,7 @@ cp ./migrate.sh ./build/
 cd build
 
 echo Building docker image
-sudo docker build -t stefanv15/tictactoe:$GIT_COMMIT .
+docker build -t stefanv15/tictactoe:$GIT_COMMIT .
 
 # Error message for docker build failure
 rc=$?
@@ -76,7 +76,7 @@ if [[ $rc != 0 ]] ; then
 fi
 
 # Pushing docker image
-sudo docker push stefanv15/tictactoe:$GIT_COMMIT
+docker push stefanv15/tictactoe:$GIT_COMMIT
 
 # Error message for docker push failure
 rc=$?
