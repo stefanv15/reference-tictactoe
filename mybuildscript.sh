@@ -16,15 +16,15 @@ fi
 export GITHUB_URL=$(echo $GIT_URL | rev | cut -c 5- | rev)
 
 
-
-# Running npm build
+# Installing npm for client side and running npm build
 echo Building app
 cd ./client
 npm install
 cd ..
+
 npm run build
 
-mkdir /build/public
+mkdir ./build/public
 
 cat > ./build/.env <<_EOF_
 GIT_COMMIT=$GIT_COMMIT
