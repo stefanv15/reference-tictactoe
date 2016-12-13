@@ -1,9 +1,10 @@
 #!/bin/bash
 
-mv ../Commit/build/docker-compose.yaml .
-mv ../Commit/build/.env .
-ls
+mv ./build/docker-compose.yaml .
+mv ./build/.env 
+ls -a
 
+cd home/ubuntu/
 # Copy files to AWS
 scp -o StrictHostKeyChecking=no -i "pem.pem" ./docker-compose.yaml ec2-user@ec2-54-229-178-217-eu-west-1.compute.amazonaws.com:~/docker-compose.yaml
 
