@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mv ../Commit/docker-compose.yaml .
-mv ../Commit/.env .
+mv ../Commit/build/docker-compose.yaml .
+mv ../Commit/build/.env .
 ls
 
 # Copy files to AWS
