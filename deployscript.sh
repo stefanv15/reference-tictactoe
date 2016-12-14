@@ -1,8 +1,12 @@
 #!/bin/bash
 
-mv ../Commit/docker-compose.yaml .
-mv ../Commit/.env .
+cp ../Commit/docker-compose.yaml .
+cp ../Commit/.env .
+
+echo "Listing things up in current folder!"
 ls -a
+echo "------------------------------------"
+
 
 # Copy files to AWS
 scp -o StrictHostKeyChecking=no -i "/home/ubuntu/pem.pem" ./docker-compose.yaml ec2-user@ec2-54-229-178-217.eu-west-1.compute.amazonaws.com:~/docker-compose.yaml
