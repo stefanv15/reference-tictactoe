@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cp ../Commit/docker-compose.yaml .
-cp ../Commit/.env .
+cp ../Commit/build/.env .
 
 echo "Listing things up in current folder!"
 ls -a
