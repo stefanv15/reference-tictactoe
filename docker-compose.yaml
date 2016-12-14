@@ -5,9 +5,6 @@ services:
       - 'PORT=3000'
     # Pointing at my working docker image
     image: 'stefanv15/tictactoe:${GIT_COMMIT}'
-    build:
-      context: '.'
-      dockerfile: 'Dockerfile'
     ports:
       - '3000:3000'
     depends_on:
