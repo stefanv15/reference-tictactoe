@@ -11,9 +11,15 @@ module.exports = function (injected) {
             _.each(history, processEvent);
         }
 
+        function gameFull(){
+            return false;
+
+        }
+
         processEvents(history);
 
         return {
+            gameFull:gameFull,
             processEvents: processEvents
         }
     };
