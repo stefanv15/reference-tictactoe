@@ -136,13 +136,13 @@ describe('join game command', function () {
                 timeStamp: "2014-12-02T11:29:29"
             },
             {
-                type: "JoinGame",
+                type: "GameJoined",
                 user: {
                     userName: "Gummi"
                 },
                 name: "TheFirstGame",
-                timeStamp: "2014-12-02T11:29:29"
-        
+                timeStamp: "2014-12-02T11:29:29",
+                side:'O'
             }
         ];
         when =
@@ -161,8 +161,7 @@ describe('join game command', function () {
                     userName: "Stebbi"
                 },
                 name: "TheFirstGame",
-                timeStamp: "2014-12-02T11:30:29",
-                side:'O'
+                timeStamp: "2014-12-02T11:30:29"
             }
         ];
     });
