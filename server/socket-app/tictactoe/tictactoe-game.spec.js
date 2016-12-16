@@ -91,6 +91,35 @@ describe('join game command', function () {
     });
 
 
+    it('should emit game created event...', function () {
+
+        given = [];
+
+        when = 
+        {
+            type: "CreateGame",
+            user: {
+                userName: "Bingo"
+            },
+            name: "TheFirstGame",
+            timeStamp: "2014-12-02T11:25:00",
+            side:'X'
+        };
+        then = [
+            {
+                type: "GameCreated",
+                user: {
+                    userName: "Bingo"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:25:00",
+                side:'X'
+            }
+        ];
+    });
+
+
+
     it('should emit game joined event...', function () {
 
         given = [{
