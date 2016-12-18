@@ -62,12 +62,12 @@ Do you have the following Jobs and what happens in each Job:
 - Other
 
 - __**Release stage**__
- * Deploy project check whether everything is installed and deploys on AWS if all green (blue)*
+ *Deploy project check whether everything is installed and deploys on AWS if all green (blue)*
 
 
 Did you use any of the following features in Jenkins?
 
-- Schedule or commit hooks
+- **Schedule or commit hooks**
 
 - Pipeline
 
