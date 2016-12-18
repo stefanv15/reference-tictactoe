@@ -1,9 +1,11 @@
+#!/bin/bash
+
+#----------------------------------------------
 # Author: Stefan Ragnar Viglundsson
 # Last-modified: 17.12.16
 # Script for building and Creating docker image
 #-----------------------------------------------
 
-#!/bin/bash
 
 # Cleaning build directory
 echo Cleaning...
