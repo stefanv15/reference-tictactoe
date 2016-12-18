@@ -1,9 +1,3 @@
-1. Jenkins - http://82.221.49.165:8080/
-   Username: kennari
-   Password: hgop2016
-
-2. AWS -  http://82.221.49.165:8080/
-
 
 ## Scripts
 
