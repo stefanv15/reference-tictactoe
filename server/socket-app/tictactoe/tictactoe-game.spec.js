@@ -225,10 +225,326 @@ describe('Move place command', function () {
                     userName: "TheGuy"
                 },
                 name: "TheFirstGame",
-                timeStamp: "2014-12-02T11:33:00",
+                 timeStamp: "2014-12-02T11:33:00",
                 side:'X'
             }
         ];
     });
+
+  /* it('should emit IllegalMove when square is already occupied...', function (){
+        given = [
+            {
+                type: "GameCreated",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "X"   
+            },
+            {
+                type: "GameJoined",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:30:29",
+                side:"O"
+            },
+           {
+                type: "PlaceMove",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:33:00",
+                placeInSqr: "3",
+                side:"X"
+            },
+            {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:33:00",
+                placeInSqr: "3",
+                side:"X"
+            }
+        ];
+        when = 
+            {
+                type: "PlaceMove",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:36:00",
+                placeInSqr: "3",
+                side:"O"
+            }
+        then = [
+            {
+                type: "IllegalMove",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:36:00",
+                side:"O"
+            }
+        ];
+    }); */
+
+   /* it('Should emit NotYourMove if attempting to make move out of turn...', function (){
+
+        given = [
+            {
+                type: "GameCreated",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "X"   
+            },
+            {
+                type: "GameJoined",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:34",
+                side:"O"
+            },
+        when = 
+            {
+                type: "PlaceMove",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:32:00",
+                side:"O"
+            }
+        then = [
+            {
+                type: "NotYourMove",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:32:00",
+                side:"O"
+            }
+        ]; 
+    }); */
+
+    /*it('Should emit game won on...', function () {
+        given = [
+            {
+                type: "GameCreated",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "X"   
+            },
+            {
+                type: "GameJoined",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:30:29",
+                side:"O"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:33:00",
+                placeInSqr: "3",
+                side:"X"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:35:00",
+                placeInSqr: "1",
+                side:"O"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:37:00",
+                placeInSqr: "4",
+                side:"X"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:39:00",
+                placeInSqr: "2",
+                side:"O"
+            },
+        when = 
+            {
+                type: "PlaceMove",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:41:00",
+                placeInSqr: "5"
+                side:"X"
+            }
+        then = [
+            {
+                type: "GameWon",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:32:00",
+                side:"X"
+            }
+        ]; 
+    });*/
+
+    /*it('Should not emit game draw if won on last move...' function () {
+        given = [
+            {
+                type: "GameCreated",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "X"
+            },
+            {
+                type: "GameJoined",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:30:29",
+                side:"O"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:33:00",
+                placeInSqr: "0",
+                side:"X"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:35:00",
+                placeInSqr: "1",
+                side:"O"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:37:00",
+                placeInSqr: "3",
+                side:"X"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:39:00",
+                placeInSqr: "2",
+                side:"O"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:37:00",
+                placeInSqr: "7",
+                side:"X"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:39:00",
+                placeInSqr: "8",
+                side:"O"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:37:00",
+                placeInSqr: "5",
+                side:"X"
+            },
+           {
+                type: "MovePlaced",
+                user: {
+                    userName: "Jolasveinninn"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:39:00",
+                placeInSqr: "4",
+                side:"O"
+            },
+        when = 
+            {
+                type: "PlaceMove",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:41:00",
+                placeInSqr: "6"
+                side:"X"
+            }
+        then = [
+            {
+                type: "GameWon",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:32:00",
+                side:"X"
+            }         
+    });*/
 });
 

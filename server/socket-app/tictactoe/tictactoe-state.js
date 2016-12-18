@@ -28,12 +28,26 @@ module.exports = function (injected) {
             return gameboard;
         }
 
+        /*function checkSqr(placeInSqr){
+            for(var i = 0; i < gameBoard.size; i++){
+                if(gameBoard[i] == 'X' || gameBoard[i] == 'O'){
+                    return occupiedSqr(placeInSqr);
+                }
+            }
+        }
+
+        function occupiedSqr(placeInSqr){
+            return gameBoard(placeInSqr) != null;
+        }*/
+
         processEvents(history);
 
         return {
             gameFull:gameFull,
+            //checkSqr:checkSqr,
+            //occupiedSqr:occupiedSqr,
             gameBoard:gameBoard,
             processEvents: processEvents
         }
-    };
+    }
 };
