@@ -1,3 +1,7 @@
+# Author: Stefan Ragnar Viglundsson
+# Last-modified: 17.12.16
+# Script for building Docker
+#-----------------------------------
 FROM node
 WORKDIR /app
 COPY . .
